@@ -1,5 +1,5 @@
 ''''
-This is an helper class to the Chilean economic indicator http://mindicador.cl/
+This is a helper class to the Chilean economic indicator http://mindicador.cl/
 using the awesome requests library you can get uf, ivp, dolar, etc.
 
 a simple example:
@@ -10,7 +10,7 @@ a simple example:
 {'fecha': '2017-07-23T04:00:00.000Z', 'nombre': 'Unidad de fomento (UF)', 'codigo': 'uf',
 'unidad_medida': 'Pesos', 'valor': 26624.85}
 
-The above response is returned as a json ready object; you can use the object the following way:
+The above response is returned as a json ready object; you can use the object in the following way:
 
 >> for ufs in uf:
       print(ufs, ':', uf.get(ufs))
@@ -21,7 +21,7 @@ codigo : uf
 unidad_medida : Pesos
 valor : 26624.85
 
-Note: Some if not most of the words in the responses are in Spanish(Chilean).
+Note: Some -if not most- of the words in the responses are in Spanish(Chilean).
 '''
 
 import requests
