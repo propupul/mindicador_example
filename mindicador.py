@@ -77,5 +77,3 @@ class Mindicador():
     def get_tasa_desempleo(self):
         self.api_url = self.api_url.json()
         return self.api_url.get('tasa_desempleo')
-
-
