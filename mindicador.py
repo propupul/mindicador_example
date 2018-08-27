@@ -17,7 +17,7 @@ unidad_medida : Pesos
 valor : 26624.85
 Note: Some -if not most- of the words in the responses are in Spanish(Chilean).
 '''
-
+import sys
 import requests
 
 class Mindicador():
@@ -27,7 +27,7 @@ class Mindicador():
             self.api_url = requests.get('http://mindicador.cl/api')
         else:
             self.bad_r = requests.get('http://mindicador.cl/api')
-            return self.bad_r.raise_for_status()
+            sys.exit()
 
     def get_uf(self):
         api_url = self.api_url.json()
