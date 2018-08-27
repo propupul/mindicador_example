@@ -3,13 +3,13 @@ This is a helper class to the Chilean economic indicator http://mindicador.cl/
 using the awesome requests library you can get uf, ivp, dolar, etc.
 a simple example:
 >> m = Mindicador()
->> m = m.get_uf()
+>> uf = m.get_uf()
 >> uf
 {'fecha': '2017-07-23T04:00:00.000Z', 'nombre': 'Unidad de fomento (UF)', 'codigo': 'uf',
 'unidad_medida': 'Pesos', 'valor': 26624.85}
 The above response is returned as a json ready object; you can use the object as a Python dictionary with {key: value}:
 >> for ufs in uf:
-      print(ufs, ':', uf.get(ufs))
+      print("{} : {}".format(ufs, uf.get(ufs)))
 fecha : 2017-07-23T04:00:00.000Z
 nombre : Unidad de fomento (UF)
 codigo : uf
@@ -27,7 +27,7 @@ class Mindicador():
             self.api_url = requests.get('http://mindicador.cl/api')
         else:
             self.bad_r = requests.get('http://mindicador.cl/api')
-            sys.exit()
+            sys.exit("The API request returned a {}".format(self.bad_r))
 
     def get_uf(self):
         api_url = self.api_url.json()
@@ -72,3 +72,7 @@ class Mindicador():
     def get_tasa_desempleo(self):
         api_url = self.api_url.json()
         return api_url.get('tasa_desempleo')
+
+    def get_bitcoin(self):
+        api_url = self.api_url.json()
+        return api_url.get('bitcoin')

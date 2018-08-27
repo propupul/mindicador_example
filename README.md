@@ -12,7 +12,7 @@ a simple example:
 'unidad_medida': 'Pesos', 'valor': 26624.85}
 The above response is returned as a json ready object; you can use the object as a Python dictionary with {key: value}:
 >> for ufs in uf:
-      print(ufs, ':', uf.get(ufs))
+      print("{} : {}".format(ufs, uf.get(ufs)))
 fecha : 2017-07-23T04:00:00.000Z
 nombre : Unidad de fomento (UF)
 codigo : uf
